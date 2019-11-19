@@ -1,0 +1,9 @@
+{% extends '_base.html' %}
+
+{% block title %}Thank you{% endblock %}
+
+{% block content %}
+<h1>Thank you for signing up.</h1>
+
+Set your password <a href="{% url 'account_reset_password' %}">here</a>.
+{% endblock content %}
