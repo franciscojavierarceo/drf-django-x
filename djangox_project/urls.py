@@ -9,18 +9,17 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
-    path('admin/', admin.site.urls),
     path('', MySignupView.as_view(), name="home"),
+    #path('admin/', admin.site.urls),
     #path('accounts/', include('allauth.urls')),
     #path('users/', include('django.contrib.auth.urls')),
-    #path('accounts/confirm-email/<slug>/',  ConfirmEmailView.as_view(), name='account_confirm_email'),
 ]
 urlpatterns += i18n_patterns(
     path('', include('pages.urls')),
-    path('', MySignupView.as_view(), name='account_signup_custom'), 
+    path('admin', admin.site.urls),
     path('', MySignupView.as_view(), name='home'), 
+    path('', MySignupView.as_view(), name='account_signup_custom'), 
     path(_('accounts/'), include('allauth.urls')),
-    path(_('accounts/login'), MySignupView.as_view(), name='account_login'), 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
