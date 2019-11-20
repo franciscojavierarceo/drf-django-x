@@ -1,5 +1,6 @@
 {% load static %}
 {% load i18n %}
+ {% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,24 +57,24 @@
 
    <nav class="navbar fixed-bottom navbar-dark bg-dark">
     <a class="navbar-brand" href="#">&copy; DjangoX 2019</a>
-            <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-                <input name="next" type="hidden" value="{{ redirect_to }}">
-                <select name="language">
-                    {% get_current_language as LANGUAGE_CODE %}
-                    {% get_available_languages as LANGUAGES %}
-                    {% get_language_info_list for LANGUAGES as languages %}
-                    {% for language in languages %}
-                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-                                {% if language.name_local  == 'español' %} 
-                                    {{ "Español" }}
-                                {% else %}
-                                    {{ language.name_local }}
-                                {% endif %}
-                        </option>
-                    {% endfor %}
-                </select>
-                <input class="btn btn-outline-secondary" type="submit" value="Go">
-            </form>    
+    <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+        <input name="next" type="hidden" value="{{ redirect_to }}">
+        <select name="language">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+            {% for language in languages %}
+                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                        {% if language.name_local  == 'español' %} 
+                            {{ "Español" }}
+                        {% else %}
+                            {{ language.name_local }}
+                        {% endif %}
+                </option>
+            {% endfor %}
+        </select>
+        <input class="btn btn-outline-secondary" type="submit" value="Go">
+    </form>    
   </nav>
 
   {% block javascript %}
