@@ -173,9 +173,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Django-Allauth Config
 LOGOUT_REDIRECT_URL = 'home'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'account_home'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'home'
-ACCOUNT_LOGIN_REDIRECT_URL = 'home'
+ACCOUNT_LOGIN_REDIRECT_URL = 'account_home'
 
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",

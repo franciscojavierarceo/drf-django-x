@@ -1,5 +1,7 @@
 from django.views.generic import TemplateView
 
+class AccountHomeView(TemplateView):
+    template_name = 'pages/account_home.html'
 
 class HomePageView(TemplateView):
     template_name = 'pages/home.html'
