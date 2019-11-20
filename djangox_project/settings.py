@@ -50,8 +50,9 @@ INSTALLED_APPS = [
     'debug_toolbar',
 
     # Local
-    'users',
-    'pages',
+    'users.apps.UsersConfig',
+    'pages.apps.PagesConfig',
+    'userprofile.apps.UserprofileConfig',
 ]
 
 MIDDLEWARE = [
