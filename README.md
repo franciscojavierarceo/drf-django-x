@@ -25,9 +25,10 @@ This is a template for a Django Rest Framework project exposing endpoints for a 
 ```
 $ git clone https://github.com/franciscojavierarceo/drf-django-x.git
 $ cd drf-django-x
-$ docker-compose up --build -d
+$ docker-compose run web bash build.sh 
 # If running this again locally try:
 $ docker volume rm drf-django-x_postgres_data
+$ docker-compose up --build -d
 $ docker-compose run web bash build.sh 
 ```
 
