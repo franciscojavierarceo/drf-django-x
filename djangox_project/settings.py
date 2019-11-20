@@ -50,13 +50,12 @@ INSTALLED_APPS = [
     'debug_toolbar',
 
     # Local
-    'users.apps.UsersConfig',
-    'pages.apps.PagesConfig',
-    'userprofile.apps.UserprofileConfig',
+    'users',
+    'pages',
+    'userprofile',
 ]
 
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+MIDDLEWARE = [ 'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
