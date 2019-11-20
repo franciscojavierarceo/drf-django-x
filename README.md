@@ -80,6 +80,13 @@ Load the site at [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
 ![Sign Up](static/images/signup_2.2.png)
 
+
+5. Tests
+To run tests execute the following:
+```
+$ docker-compose run web python manage.py test
+```
+
 ## Next Steps
 
 - Use [PostgreSQL locally via Docker](https://wsvincent.com/django-docker-postgresql/)
