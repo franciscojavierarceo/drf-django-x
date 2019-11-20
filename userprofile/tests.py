@@ -10,15 +10,16 @@ class UserProfileTests(TestCase):
 
     # Creating a user and profile
     def setUpTestData(cls):
-        #User = get_user_model()
-        User = settings.AUTH_USER_MODEL
+        User = get_user_model()
+        #User = settings.AUTH_USER_MODEL
         testuser1 = User.objects.create_user(
-            username='testuser1', 
+            email='test@test.com',
+            username='test_test_com',
             password='abc123'
         )
         testuser1.save()
 
-        test_user_profile1 = UserProfile.create(
+        test_user_profile1 = UserProfile.objects.create(
             user=testuser1, 
             title='Dr',
             first_name='Tom',
