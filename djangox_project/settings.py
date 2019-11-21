@@ -70,9 +70,9 @@ MIDDLEWARE = [ 'django.middleware.security.SecurityMiddleware',
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [[
+    'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
-    ]]
+    ]
 }
 
 #Cacheing settings -- default seconds = 1 week
