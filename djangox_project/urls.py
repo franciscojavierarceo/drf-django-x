@@ -17,10 +17,11 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path('', include('pages.urls')),
     path('admin/', admin.site.urls),
-    path('userprofile/api/v1/', include('userprofile.urls')),
     path('', MySignupView.as_view(), name='home'), 
     path('', MySignupView.as_view(), name='account_signup_custom'), 
     path(_('accounts/'), include('allauth.urls')),
+    path('userprofile/api/v1/', include('userprofile.urls')),
+    path('api-auth/', include('rest_framework.urls')),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
