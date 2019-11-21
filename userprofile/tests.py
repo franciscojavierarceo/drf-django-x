@@ -7,7 +7,6 @@ from .models import UserProfile
 
 class UserProfileTests(TestCase):
     @classmethod
-
     # Creating a user and profile
     def setUpTestData(cls):
         User = get_user_model()

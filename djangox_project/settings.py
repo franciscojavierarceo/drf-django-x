@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'crispy_forms',
     'debug_toolbar',
+    'rest_framework',
 
     # Local
     'users',
@@ -67,6 +68,12 @@ MIDDLEWARE = [ 'django.middleware.security.SecurityMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [[
+        'rest_framework.permissions.AllowAny',
+    ]]
+}
 
 #Cacheing settings -- default seconds = 1 week
 CACHE_MIDDLEWARE_ALIAS = 'default'
