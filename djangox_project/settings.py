@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'debug_toolbar',
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
 
     # Local
     'users',
@@ -72,7 +74,11 @@ MIDDLEWARE = [ 'django.middleware.security.SecurityMiddleware',
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
-    ]
+    ],
+        'DEFAULT_AUTHENTICATION_CLASSES': [
+            'rest_framework.authentication.SessionAuthentication',
+            'rest_framework.authentication.TokenAuthentication'
+    ],
 }
 
 #Cacheing settings -- default seconds = 1 week
