@@ -8,6 +8,6 @@ class UserProfileList(generics.ListCreateAPIView):
     serializer_class = UserProfileSerializer
 
 class UserProfileDetail(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (permissions.IsUserOrReadOnly,)
+    permission_classes = (IsUserOrReadOnly,)
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer
