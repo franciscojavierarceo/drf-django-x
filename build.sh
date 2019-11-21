@@ -1,4 +1,6 @@
+python manage.py makemigrations users
 python manage.py makemigrations userprofile
+python manage.py migrate users
 python manage.py migrate userprofile
 python manage.py makemigrations
 python manage.py migrate

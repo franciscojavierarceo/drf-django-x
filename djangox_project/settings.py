@@ -46,11 +46,13 @@ INSTALLED_APPS = [
     # Third-party
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
     'crispy_forms',
     'debug_toolbar',
     'rest_framework',
     'rest_framework.authtoken',
     'rest_auth',
+    'rest_auth.registration',
 
     # Local
     'users',
